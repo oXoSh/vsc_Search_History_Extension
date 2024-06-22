@@ -1,7 +1,7 @@
 {
-  "name": "helloWorld",
-  "displayName": "",
-  "description": "LEAVE BLANK",
+  "name": "search-log",
+  "displayName": "Search LOG",
+  "description": "Show search history",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.90.0"
@@ -16,6 +16,10 @@
       {
         "command": "helloWorld.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "nb.search.showHistory",
+        "title": "MyExten: Show Search History"
       }
     ]
   },
