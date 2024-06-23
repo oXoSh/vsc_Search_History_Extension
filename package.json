@@ -20,8 +20,32 @@
       {
         "command": "nb.search.showHistory",
         "title": "MyExten: Show Search History"
+      },
+      {
+        "command": "nb.search.refreshSearchHistory",
+        "title": "refresh",
+        "icon": "$(refresh)"
       }
-    ]
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "searchLog",
+          "name": "Search Log",
+          "icon": "resources/icon24.svg",
+          "contextualTitle": "Search History"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "nb.search.refreshSearchHistory",
+          "when": "view == searchLog",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
