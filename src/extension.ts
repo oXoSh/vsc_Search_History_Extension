@@ -35,14 +35,13 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(disposable);
 
-	const disposable2 = vscode.commands.registerCommand('nb.search.showHistory', () => {
+	const disposable2 = vscode.commands.registerCommand('nb.search.showHistory', async () => {
 		let searchHistory = context.globalState.get('searchHistory', []);
 		let workspaceStorage = context.storageUri?.fsPath;
-		let historyValue: ISearchHistoryValues | undefined;
 		if (workspaceStorage) {
 			const workspaceStoragePath = path.parse(workspaceStorage).dir;
 			const dbPath = path.join(workspaceStoragePath, 'state.vscdb');
-			historyValue = getSearchHistory(dbPath);
+			const historyValue = await getSearchHistory(dbPath);
 
 			// save to global state
 			context.globalState.update('searchHistory', historyValue);
