@@ -11,6 +11,7 @@ export function activate(context: vscode.ExtensionContext) {
 	vscode.window.registerTreeDataProvider('searchLog', searchHistoryProvider);
 
 	vscode.commands.registerCommand('searchLog.refreshSearchHistory', () => searchHistoryProvider.refresh());
+	vscode.commands.registerCommand('searchLog.copyNode', arg => searchHistoryProvider.copy(arg));
 }
 
 // This method is called when your extension is deactivated

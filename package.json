@@ -17,6 +17,11 @@
         "command": "searchLog.refreshSearchHistory",
         "title": "searchLog.refresh",
         "icon": "$(refresh)"
+      },
+      {
+        "command": "searchLog.copyNode",
+        "title": "searchLog.copyNode",
+        "icon": "$(clippy)"
       }
     ],
     "views": {
