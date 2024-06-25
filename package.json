@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "nb.search.refreshSearchHistory",
-        "title": "refresh",
+        "command": "searchLog.refreshSearchHistory",
+        "title": "searchLog.refresh",
         "icon": "$(refresh)"
       }
     ],
@@ -32,7 +32,7 @@
     "menus": {
       "view/title": [
         {
-          "command": "nb.search.refreshSearchHistory",
+          "command": "searchLog.refreshSearchHistory",
           "when": "view == searchLog",
           "group": "navigation"
         }
