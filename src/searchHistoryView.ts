@@ -2,28 +2,9 @@ import * as vscode from 'vscode';
 import { getSearchHistory } from './getSearchHistory';
 import path from 'path';
 
-export class searchHistoryView {
-    private context: vscode.ExtensionContext;
+export class SearchHistoryProvider implements vscode.TreeDataProvider<string> {
 
-    constructor(context: vscode.ExtensionContext) {
-        const view = vscode.window.createTreeView('searchLog', { treeDataProvider: this.searchHistoryDataProvider(context), showCollapseAll: true });
-        context.subscriptions.push(view);
-        this.context = context;
-    }
-
-    searchHistoryDataProvider(context: vscode.ExtensionContext): vscode.TreeDataProvider<string> {
-        return {
-            getChildren: async (element: string): Promise<string[]> => {
-                return this.getChildren(element ? element : undefined);
-            },
-            getTreeItem: (element: string): vscode.TreeItem => {
-                const treeItem = this.getTreeItem(element);
-                return treeItem;
-            },
-            getParent: (key: string): string | undefined => {
-                return undefined;
-            }
-        };
+    constructor(private context: vscode.ExtensionContext) {
     }
 
     refresh(): any {

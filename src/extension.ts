@@ -3,7 +3,7 @@
 import * as vscode from 'vscode';
 import * as sqlite3 from 'sqlite3';
 import path from 'path';
-import { searchHistoryView } from './searchHistoryView';
+import { SearchHistoryProvider } from './searchHistoryView';
 import { getSearchHistory } from './getSearchHistory';
 
 // C:\Users\15544\workspace\vscode\src\vs\workbench\contrib\search\common\searchHistoryService.ts
@@ -24,7 +24,8 @@ export function activate(context: vscode.ExtensionContext) {
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "helloWorld" is now active!');
 
-	let view = new searchHistoryView(context);
+	const searchHistoryProvider = new SearchHistoryProvider(context);
+	vscode.window.registerTreeDataProvider('searchLog', searchHistoryProvider);
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
@@ -36,7 +37,7 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showWarningMessage('Hello World from NEWBOX!');
 	});
 
-	vscode.commands.registerCommand('nb.search.refreshSearchHistory', () => view.refresh());
+	vscode.commands.registerCommand('nb.search.refreshSearchHistory', () => searchHistoryProvider.refresh());
 
 	context.subscriptions.push(disposable);
 
