@@ -14,14 +14,6 @@
   "contributes": {
     "commands": [
       {
-        "command": "helloWorld.helloWorld",
-        "title": "Hello World"
-      },
-      {
-        "command": "nb.search.showHistory",
-        "title": "MyExten: Show Search History"
-      },
-      {
         "command": "nb.search.refreshSearchHistory",
         "title": "refresh",
         "icon": "$(refresh)"

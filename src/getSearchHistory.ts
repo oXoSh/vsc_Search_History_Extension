@@ -1,5 +1,4 @@
 import * as vscode from 'vscode';
-import * as path from 'path';
 import * as sqlite3 from 'sqlite3';
 
 import { ISearchHistoryValues } from './searchHistoryService';
@@ -32,7 +31,6 @@ export async function getSearchHistory(dbPath: string): Promise<ISearchHistoryVa
                     return;
                 }
                 console.log(`Value for '${SEARCH_HISTORY_KEY}':`, historyValue);
-                vscode.window.showInformationMessage(`Value for '${SEARCH_HISTORY_KEY}': ${historyValue}`);
             } else {
                 console.log(`Key '${SEARCH_HISTORY_KEY}' not found.`);
                 vscode.window.showInformationMessage(`Key '${SEARCH_HISTORY_KEY}' not found.`);
