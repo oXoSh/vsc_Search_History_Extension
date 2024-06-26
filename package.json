@@ -44,6 +44,12 @@
       ]
     }
   },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oXoSh/vsc_Search_History_Extension.git"
+  },
+  "homepage": "https://github.com/oXoSh/vsc_Search_History_Extension/blob/main/README.md",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
