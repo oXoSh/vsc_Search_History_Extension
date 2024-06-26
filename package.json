@@ -1,6 +1,6 @@
 {
-  "name": "search-log",
-  "displayName": "Search LOG",
+  "name": "search-hist",
+  "displayName": "Search Hist",
   "description": "Show search history",
   "version": "0.0.1",
   "engines": {
@@ -14,21 +14,21 @@
   "contributes": {
     "commands": [
       {
-        "command": "searchLog.refreshSearchHistory",
-        "title": "searchLog.refresh",
+        "command": "searchHist.refreshSearchHistory",
+        "title": "searchHist.refresh",
         "icon": "$(refresh)"
       },
       {
-        "command": "searchLog.copyNode",
-        "title": "searchLog.copyNode",
+        "command": "searchHist.copyNode",
+        "title": "searchHist.copyNode",
         "icon": "$(clippy)"
       }
     ],
     "views": {
       "explorer": [
         {
-          "id": "searchLog",
-          "name": "Search Log",
+          "id": "searchHist",
+          "name": "Search Hist",
           "icon": "resources/icon24.svg",
           "contextualTitle": "Search History"
         }
@@ -37,8 +37,8 @@
     "menus": {
       "view/title": [
         {
-          "command": "searchLog.refreshSearchHistory",
-          "when": "view == searchLog",
+          "command": "searchHist.refreshSearchHistory",
+          "when": "view == searchHist",
           "group": "navigation"
         }
       ]

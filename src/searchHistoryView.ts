@@ -42,7 +42,7 @@ export class SearchHistoryProvider implements vscode.TreeDataProvider<string> {
         const treeItem = new vscode.TreeItem(key);
         treeItem.id = key;
         treeItem.command = {
-            command: 'searchLog.copyNode',
+            command: 'searchHist.copyNode',
             title: 'Copy',
             arguments: [key]
         };
