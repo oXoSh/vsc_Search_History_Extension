@@ -58,6 +58,9 @@
     "lint": "eslint src --ext ts",
     "test": "vscode-test"
   },
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  },
   "devDependencies": {
     "@types/mocha": "^10.0.6",
     "@types/node": "20.x",
@@ -67,7 +70,6 @@
     "@vscode/test-cli": "^0.0.9",
     "@vscode/test-electron": "^2.4.0",
     "eslint": "^8.57.0",
-    "sqlite3": "^5.1.7",
     "typescript": "^5.4.5"
   }
 }
